@@ -1,19 +1,22 @@
-# Student Grade Manager
 
-name = input("Enter student name: ")
-mark = int(input("Enter student mark: "))
+def studentgrademanager():
+    try:
+        score = float(input("Enter the student's score: "))
+        if score >= 90 and score <= 100:
+            grade = 'A'
+        elif score >= 80 and score <= 89:
+            grade = 'B'
+        elif score >= 70 and score <= 79:
+            grade = 'C'
+        elif score >= 60 and score <= 69:
+            grade = 'D'
+        else:
+            grade = 'E'
 
-if mark >= 90:
-    grade = "A"
-elif mark >= 80:
-    grade = "B"
-elif mark >= 70:
-    grade = "C"
-elif mark >= 60:
-    grade = "D"
-else:
-    grade = "F"
-
-print("\nStudent Name:", name)
-print("Mark:", mark)
-print("Grade:", grade)
+        print(f"The student's grade is: {grade}")
+    except ValueError as ve:
+        print(f"Value Error: {ve}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+    
+studentgrademanager()
